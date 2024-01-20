@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+const key=`da7be7f67bmshadedae446e6f5d7p10ba3djsn596c7c27bc22`;
+// 1396b2640amsh17de8d6pp5a3fa13ep1a8348jsnc9f4617f74cc
 const initialDetails={
     location: 'Paris',
     checkin: '2024-09-16',
@@ -37,16 +39,15 @@ const FetchDetails=({ setPlaces, setIsAnimating })=>{
               currency: details.currency
             },
             headers: {
-              'X-RapidAPI-Key': '1396b2640amsh17de8d65a3fa13ep1a8348jsnc9f4617f74cc',
+              'X-RapidAPI-Key': key,
               'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
             }
           };
         try{
-            alert("API Month limit exceed")
-            // const response=await axios.request(options)
-            // console.log(response.data)
-            // if(response.data.error){console.log(response.data.message)}
-            // else{console.log(response.data.results); setPlaces(response.data.results)}
+            const response=await axios.request(options)
+            console.log(response.data)
+            if(response.data.error){console.log(response.data.message)}
+            else{console.log(response.data.results); setPlaces(response.data.results)}
         }
         catch(error){
             alert(error.response.data.message)
