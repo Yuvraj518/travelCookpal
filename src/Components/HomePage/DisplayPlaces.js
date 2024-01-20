@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const DisplayPlaces=({places})=>{
     console.log("display")
     return (<div className="place-container">
-        <h1>places....</h1>
         {
             places && places.map((item)=>(
               <div className="card" id={item.id}>
