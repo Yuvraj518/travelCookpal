@@ -1,0 +1,4 @@
+login- post("https://instagram-express-app.vercel.app/api/auth/login): email,password.
+signup-post("https://instagram-express-app.vercel.app/api/auth/signup"): name,email,password.
+delete("https://instagram-express-app.vercel.app/api/auth/logout"): headers:{ "authorization" : `Bearer ${token }`}.
+zuku- get("https://instagram-express-app.vercel.app/api/auth/zuku"): header:{...}.

@@ -1,0 +1,4 @@
+root: E:\Accio\a_react_dEC\react\practicee\hello-world 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none
