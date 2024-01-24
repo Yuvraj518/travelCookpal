@@ -1,7 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import dataPlaces from "./PlacesData";
 const key=`da7be7f67bmshadedae446e6f5d7p10ba3djsn596c7c27bc22`;
-// 1396b2640amsh17de8d6pp5a3fa13ep1a8348jsnc9f4617f74cc
+// const key=`1396b2640amsh17de8d6pp5a3fa13ep1a8348jsnc9f4617f74cc`;
 const initialDetails={
     location: 'Paris',
     checkin: '2024-09-16',
@@ -45,9 +46,10 @@ const FetchDetails=({ setPlaces, setIsAnimating })=>{
           };
         try{
             const response=await axios.request(options)
-            console.log(response.data)
+            // const response={a:1,data:{b:2,results:dataPlaces}};
+            console.log(response.data,"ss")
             if(response.data.error){console.log(response.data.message)}
-            else{console.log(response.data.results); setPlaces(response.data.results)}
+            else{console.log(response.data.results); setPlaces(response.data.results.slice(0,12))}
         }
         catch(error){
             alert(error.response.data.message)
